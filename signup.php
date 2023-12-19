@@ -1,35 +1,52 @@
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hachage du mot de passe
-
-//valider user name minimum 2 max 50 + not in DB
-//valider pwd et autres champs du signup
-
-
-    header('Location: login.php');
-    exit();
-}
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Inscription Utilisateur</title>
 </head>
+
 <body>
-    <h1>Inscription</h1>
-    <form action="signup.php" method="post">
-        <label for="username">Nom d'utilisateur:</label>
-        <input type="text" id="username" name="username" required>
-        <!-- message d'erreur  -->
+    <h2>Inscription Utilisateur</h2>
+    <form action="./functions/FonctionsSignUp.php" method="post">
+        <label for="user_name">Nom d'utilisateur :</label>
+        <input type="text" name="user_name">
         <br>
-        <label for="password">Mot de passe:</label>
-        <input type="password" id="password" name="password" required>
+        <label for="email">Email :</label>
+        <input type="email" name="email">
+        <br>
+        <label for="pwd">Mot de passe :</label>
+        <input type="password" name="pwd">
+        <br>
+        <label for="street_name">Nom de la Rue :</label>
+        <input type="text" name="street_name">
+        <br>
+        <label for="street_nb">Numéro de Rue :</label>
+        <input type="text" name="street_nb">
+        <br>
+        <label for="city">Ville :</label>
+        <input type="text" name="city">
+        <br>
+        <label for="province">Province :</label>
+        <input type="text" name="province">
+        <br>
+        <label for="zip_code">Code Postal :</label>
+        <input type="text" name="zip_code">
+        <br>
+        <label for="country">Pays :</label>
+        <input type="text" name="country">
         <br>
         <input type="submit" value="S'inscrire">
+        <a href="index.php">Accueil</a>
+
+        <?php
+        if (isset($_GET['error'])) {
+            $error = $_GET['error'];
+            echo "<p style='color:red'>$error</p>";
+        }
+        ?>
     </form>
 </body>
+
 </html>
