@@ -1,20 +1,25 @@
-<?php
-session_start();
-if (isset($_SESSION['username'])) {
-    header('Location: profil.php');
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Voitures</title>
 </head>
+
 <body>
-    <h1>Bienvenue sur notre site</h1>
-    <p><a href="signup.php">S'inscrire</a></p>
-    <p><a href="login.php">Se connecter</a></p>
+
+
+<main>
+    <h1>Bienvenue</h1>
+
+    <?php 
+
+include 'header.php'; 
+
+?>
+</main>
+
 </body>
 </html>
