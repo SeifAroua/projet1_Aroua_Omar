@@ -5,18 +5,19 @@
 }
 
 body {
-  background-color: #000;
-  color: #ffa500;
+  background-color: #d3d3d3; /* Gris clair */
+  color: #000; /* Noir */
   font-family: Arial, sans-serif;
 }
 
 .container {
   width: 80%;
   margin: 0 auto;
+  max-width: 400px;
 }
 
 a {
-  color: #ffa500;
+  color: #00f; /* Bleu */
   text-decoration: none;
 }
 
@@ -27,48 +28,68 @@ a:hover {
 .button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #ffa500;
-  color: #000;
+  background-color: #00f; /* Bleu */
+  color: #fff; /* Blanc */
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: auto; /* Taille automatique en fonction du contenu */
+  box-sizing: content-box; /* La largeur ne prend pas en compte le rembourrage et la bordure */
 }
 
 .button:hover {
-  background-color: #ffd700;
+  background-color: #0070c0; /* Bleu foncé */
 }
 
 form {
   margin-top: 20px;
+  text-align: center;
 }
 
 input,
-textarea {
+textarea,
+.button {
   padding: 10px;
   margin-bottom: 15px;
-  width: 100%;
-  border: 1px solid #ffa500;
+  width: 70%; /* Ajustez la largeur selon vos préférences */
+  border: 1px solid #00f; /* Bleu */
   border-radius: 5px;
+  box-sizing: border-box;
+  display: block; /* Chaque élément commence sur une nouvelle ligne */
+  margin-left: auto; /* Aligner le début au même niveau */
+  margin-right: auto; /* Aligner la fin au même niveau */
+}
+
+/* Couleur par défaut pour les titres et les labels */
+label,
+h1,
+h2,
+h3,
+h4 {
+  color: inherit;
 }
 
 .navbar {
-  background-color: #000;
+  background-color: #d3d3d3; /* Gris clair */
   padding: 15px 0;
+  text-align: center;
 }
 
 .navbar a {
-  margin-right: 20px;
+  margin: 0 20px;
+  color: #00f; /* Bleu */
 }
 
 .footer {
-  background-color: #000;
-  color: #ffa500;
+  background-color: #d3d3d3; /* Gris clair */
+  color: #00f; /* Bleu */
   padding: 20px 0;
   text-align: center;
 }
 
 .section {
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .section-title {
