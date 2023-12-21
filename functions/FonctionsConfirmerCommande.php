@@ -13,8 +13,12 @@ $user_id = $_SESSION['user_id'];
 
 $sql = "SELECT u.*, a.* FROM `user` u
         JOIN `address` a ON u.shipping_address_id = a.id
-        WHERE u.id = $user_id";
-$result = mysqli_query($conn, $sql);
+        WHERE u.id = ?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 'i', $user_id);
+mysqli_stmt_execute($stmt);
+
+$result = mysqli_stmt_get_result($stmt);
 
 if ($result && mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_assoc($result);
